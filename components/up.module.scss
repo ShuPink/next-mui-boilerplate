@@ -1,0 +1,43 @@
+.enter, 
+.appear {
+  opacity: 0;
+  transform: translateY(100%);
+}
+.enterActive,
+.appearActive {
+  animation-name: enterFromRight;
+  animation-duration: 1200ms;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  animation-delay: 0ms;
+  animation-fill-mode: both;
+}
+.enterDone {
+  opacity: 1 !important;
+}
+
+.exit {
+  opacity: 1;
+  transform: translateY(0%);
+}
+
+.exitActive {
+  animation-name: exitToLeft;
+  animation-duration: 1200ms;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  animation-delay: 0ms;
+  animation-fill-mode: both;
+}
+.exitDone {
+  opacity: 0;
+  transform: translateY(-100%);
+}
+
+@keyframes enterFromRight {
+	from { opacity: 0; transform: translateY(100%); }
+	to { opacity: 1; transform: translateY(0%);}
+}
+
+@keyframes exitToLeft {
+  from { opacity: 1; transform: translateY(0%);}
+  to { opacity: 0; transform: translateY(-100%);}
+}

@@ -1,0 +1,86 @@
+@use 'sass:map';
+
+// variants
+$primary-color: #A8A8A8;
+$theme-color: #ffffff;
+
+$sans-serif-font: 'Open Sans', sans-serif;
+$cursive-font: 'Yellowtail', 'Courier New', Courier, monospace;
+$monospace-font: 'Courier New', Courier, monospace;
+
+// the :export directive is for webpack
+// export any variables you want to consume with js
+// this is actually not being in use, just a placeholder for future
+:export {
+  themecolor: $theme-color;
+  primarycolor: $primary-color;
+}
+
+// https://material-ui.com/customization/breakpoints/
+// value         |0px     600px    960px    1280px   1920px
+// key           |xs      sm       md       lg       xl
+// screen width  |--------|--------|--------|--------|-------->
+// range         |   xs   |   sm   |   md   |   lg   |   xl
+
+$bp-up: (
+    "xs": 0px,
+    "sm": 601px,
+    "md": 961px,
+    "lg": 1281px,
+    "xl": 1921px,
+) !default;
+
+$bp-down: (
+    "xs": 600px,
+    "sm": 960px,
+    "md": 1280px,
+    "lg": 1920px,
+    "xl": 100000px,
+) !default;
+
+// theme.breakpoints.up(key)
+@mixin breakpoints-up($key) {
+   @media (min-width: #{map.get($bp-up, $key)}) {
+       @content;
+   }
+}
+
+// theme.breakpoints.down(key)
+@mixin breakpoints-down($key) {
+   @media (max-width: #{map.get($bp-down, $key)}) {
+       @content;
+   }
+}
+
+// theme.breakpoints.between(start, end)
+@mixin breakpoints-between($start, $end) {
+   @media (min-width: #{map.get($bp-up, $start)}) and (max-width: #{map.get($bp-down, $end)}) {
+       @content;
+   }
+}
+
+// box with vertical and horizontal centering
+@mixin flex-vertical-align {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin sans-serif-font-settings {
+    font-family: $sans-serif-font;
+    color: $primary-color;
+    color: black;
+    letter-spacing: 1px;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+@mixin nav-button-settings {
+    @include sans-serif-font-settings;
+    transition: 300ms ease-out;
+    &:hover {
+        color: rgb(230, 185, 71);
+        transform: scale(1.2);
+        transition: 200ms ease-in;
+    }
+}

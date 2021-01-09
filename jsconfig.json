@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "module": "commonjs",
+  },
+  "include": [
+    "pages",
+    "lib",
+    "components",
+    "styles",
+    "public",
+  ]
+}

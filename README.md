@@ -1,5 +1,15 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+... with a few extras: 
+
+-  Material UI
+-  SCSS modules (I prefer css modules to makestyles 
+-  Some scss basic utils (see `styles/utils.scss`) - for some helpers, like some `theme.breakpoints` mixins
+-  Configuration to import from absolute paths
+-  A responsive image example (using next/image)
+-  A hook to detect devices
+-  A simple page transition example
+
 ## Getting Started
 
 First, run the development server:
@@ -10,7 +20,7 @@ npm run dev
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3001](http://localhost:3001) with your browser to see the result.
 
 You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 

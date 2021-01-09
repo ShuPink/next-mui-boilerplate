@@ -1,0 +1,10 @@
+@import "/styles/utils.scss";
+
+.loading {
+  height: 100%; // mobile viewport workaround
+  width: 100%; // mobile viewport workaround
+  overflow: hidden;
+  @include flex-vertical-align;
+  color: $primary-color;
+  background: $theme-color;
+}

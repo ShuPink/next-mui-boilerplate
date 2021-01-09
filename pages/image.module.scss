@@ -1,0 +1,21 @@
+@import "/styles/utils.scss";
+
+.container {
+  @include flex-vertical-align;
+  flex-direction: column;
+}
+
+.main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.imageContainer {
+  @include flex-vertical-align;
+  height: 100%;
+  width: 100%;
+  border: 1px solid red;
+}

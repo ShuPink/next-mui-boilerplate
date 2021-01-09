@@ -1,0 +1,35 @@
+@import "/styles/utils.scss";
+
+.nav {
+  @include flex-vertical-align;
+  @include sans-serif-font-settings;
+  justify-content: space-evenly;
+  height: 4rem;
+  width: 100%;
+  background: rgba(0,0,0,0.2);
+  @include breakpoints-down(sm) {
+    @media (orientation: landscape) {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+  @include breakpoints-down(xs) {
+    height: 6rem;
+    width: 100%;
+    justify-content: start;
+    padding-bottom: 0;
+  }
+}
+
+.hideWhenSmall {
+  @include nav-button-settings;
+  @include breakpoints-down(sm) {
+    @media (orientation: landscape) {
+      display: none;
+    }
+  }
+  @include breakpoints-down(xs) {
+    display: none;
+  }
+}

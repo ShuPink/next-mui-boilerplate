@@ -1,0 +1,89 @@
+{
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "airbnb",
+    "airbnb/hooks",
+    "plugin:react/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:jsx-a11y/recommended"
+  ],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 11,
+    "sourceType": "module"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    "import/resolver": {
+      "node": {
+        "paths": [
+          "."
+        ]
+      }
+    }
+  },
+  "plugins": [
+    "react",
+    "react-hooks"
+  ],
+  "rules": {
+    "no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_"
+      }
+    ],
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-props-no-spreading": [
+      "error",
+      {
+        "custom": "ignore",
+        "exceptions": [
+          "test"
+        ]
+      }
+    ],
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
+      }
+    ],
+    "react/display-name": 1,
+    "jsx-a11y/anchor-is-valid": [
+      "error",
+      {
+        "components": [
+          "Link"
+        ],
+        "specialLink": [
+          "hrefLeft",
+          "hrefRight"
+        ],
+        "aspects": [
+          "invalidHref",
+          "preferButton"
+        ]
+      }
+    ]
+  }
+}
