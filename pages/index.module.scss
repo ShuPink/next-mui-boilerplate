@@ -1,8 +1,9 @@
 @import "/styles/utils.scss";
 
 .container {
-  @include flex-vertical-align;
+  @include flex-center;
   flex-direction: column;
+  height: 100vh;
 }
 
 .main {
@@ -13,7 +14,7 @@
 }
 
 .footer {
-  @include flex-vertical-align;
+  @include flex-center;
   width: 100%;
   height: 100px;
   border-top: 1px solid #eaeaea;
@@ -24,7 +25,7 @@
 }
 
 .footer a {
-  @include flex-vertical-align;
+  @include flex-center;
 }
 
 .description {

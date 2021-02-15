@@ -1,12 +1,11 @@
 @import "/styles/utils.scss";
 
-.imageContainer {
-  position: relative;
-  float: left;
-}
-
 .image {
   transition: opacity 1000ms ease;
+}
+
+.imageContainer {
+  position: relative;
 }
 
 .pending {
@@ -18,7 +17,7 @@
 }
 
 .loader {
-  @include flex-vertical-align;
+  @include flex-center;
   position: absolute; 
   margin: auto; 
   width: 100%; 

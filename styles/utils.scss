@@ -8,6 +8,14 @@ $sans-serif-font: 'Open Sans', sans-serif;
 $cursive-font: 'Yellowtail', 'Courier New', Courier, monospace;
 $monospace-font: 'Courier New', Courier, monospace;
 
+$mild-shadow: 2px 4px 6px 2px rgba(0, 0, 0, 0.25);
+$layered-shadow: 0 1px 1px rgba(0,0,0,0.12), 
+              0 2px 2px rgba(0,0,0,0.12), 
+              0 4px 4px rgba(0,0,0,0.12), 
+              0 8px 8px rgba(0,0,0,0.12),
+              0 16px 16px rgba(0,0,0,0.12);
+
+
 // the :export directive is for webpack
 // export any variables you want to consume with js
 // this is actually not being in use, just a placeholder for future
@@ -59,28 +67,95 @@ $bp-down: (
    }
 }
 
-// box with vertical and horizontal centering
-@mixin flex-vertical-align {
+
+/** ------------------------
+Define common used flexbox configs here
+    https://flexbox.help/
+    http://asciiflow.com/
+    ------------------ */
+
+/** flexbox with vertical and horizontal centering
+  @include flex-center;
+  +-------------------+
+  |                   |
+  |     +---+---+     |
+  |     |   |   |     |
+  |     +---+---+     |
+  |                   |
+  +-------------------+
+  
+  @include flex-center;
+  flex-direction: column;
+  +-------------------+
+  |                   |
+  |     +-------+     |
+  |     +-------+     |
+  |     +-------+     |
+  |                   |
+  +-------------------+
+*/
+
+@mixin flex-center {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-@mixin sans-serif-font-settings {
-    font-family: $sans-serif-font;
-    color: $primary-color;
-    color: black;
-    letter-spacing: 1px;
-    font-size: 1rem;
-    text-transform: uppercase;
+/** flexbox centered row spaced
+
+  @include flex-center-spaced;
+  +-------------------+
+  |                   |
+  |   +---+   +---+   |
+  |   |   |   |   |   |
+  |   +---+   +---+   |
+  |                   |
+  +-------------------+
+
+  @include flex-center-spaced;
+  flex-direction: column;
+  +-------------------+
+  |                   |
+  |     +-------+     |
+  |     +-------+     |
+  |                   |
+  |     +-------+     |
+  |     +-------+     |
+  |                   |
+  +-------------------+
+*/
+
+@mixin flex-center-spaced {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
-@mixin nav-button-settings {
-    @include sans-serif-font-settings;
-    transition: 300ms ease-out;
-    &:hover {
-        color: rgb(230, 185, 71);
-        transform: scale(1.2);
-        transition: 200ms ease-in;
-    }
+/** flexbox centered column full width
+  @include flexbox-column-full-width;
+  +-------------------+
+  |                   |
+  +-------------------+
+  |      Box 1        |
+  +-------------------+
+  |      Box 2        |
+  +-------------------+
+  |                   |
+  +-------------------+
+  */
+
+@mixin flex-column-full-width {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+}
+
+@mixin page-settings {
+  margin-top: 16rem;
+  height: 1024px;
+  width: 100%;
+  overflow: hidden;
+  box-shadow: $mild-shadow;
+  position: relative;
 }

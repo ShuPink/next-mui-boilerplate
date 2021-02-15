@@ -1,0 +1,33 @@
+@import "/styles/utils.scss";
+
+.imageContainerDefault {
+  @include flex-center;
+}
+
+.imageStylingBox {
+  background: blue;
+  border-radius: 5rem;
+  overflow: hidden;
+}
+
+.image {
+  transition: opacity 1000ms ease;
+}
+
+.pending {
+  opacity: 0;
+}
+
+.loaded {
+  opacity: 1;
+}
+
+.loader {
+  @include flex-center;
+  position: absolute; 
+  margin: auto; 
+  width: 100%; 
+  height: 100%; 
+  top: 0;
+  color: darkgray;
+}

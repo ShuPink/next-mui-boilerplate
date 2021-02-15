@@ -3,7 +3,14 @@
 html {
   padding: 0;
   margin: 0;
-  height: 100vh; // mobile viewport workaround
+  scroll-behavior: smooth;
+  // height: 100vh; // mobile viewport workaround
+
+  // Magic: https://medium.com/hackernoon/4-techniques-for-responsive-font-sizing-with-scss-f663791c62f0
+  @media (max-width: 1280px) {
+    font-size: calc(12px + .3vw);
+  }
+
 }
 
 body {
@@ -12,12 +19,22 @@ body {
   font-family: Open Sans, Roboto, Segoe UI, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   background: $theme-color;
-  top: 0; // <-- mobile viewport workaround 
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100vw; // mobile viewport workaround --->
+  // top: 0; // <-- mobile viewport workaround 
+  // left: 0;
+  // right: 0;
+  // bottom: 0;
+  // width: 100vw; // mobile viewport workaround --->
 }
+
+// mobile viewport workaround only necessary for single page apps
+// i.e. no scrolling of the window/body (you might scroll a container inside this instead)
+// .container {
+//   position: fixed;
+//   top: 0;
+//   height: 100%; // mobile viewport workaround
+//   width: 100%; // mobile viewport workaround
+//   overflow: hidden;
+// }
 
 a {
   color: inherit;
@@ -26,6 +43,21 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+// offset fix for the navbar
+.anchor {
+  display: block;
+  position: absolute;
+  top: -128px;
+  height: 128px;
+  width: 128px;
+  visibility: hidden;
+  @include breakpoints-down(sm) {
+    top: -64px;
+    height: 64px;
+    width: 64px;
+  };  
 }
 
 /* this is for google tag manager */
@@ -70,10 +102,3 @@ button * {
 // hopefully can be removed at a later date
 // https://github.com/vercel/next.js/issues/17464
 
-.container {
-  position: fixed;
-  top: 0;
-  height: 100%; // mobile viewport workaround
-  width: 100%; // mobile viewport workaround
-  overflow: hidden;
-}

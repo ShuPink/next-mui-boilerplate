@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { useTheme } from '@material-ui/core/styles';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
-import { useContainerDimensions } from 'lib/containerDimensions';
+import useContainerDimensions from 'lib/containerDimensions';
 import Button from '@material-ui/core/Button';
 import MenuButton from './menuButton';
 import s from './navigation.module.scss';

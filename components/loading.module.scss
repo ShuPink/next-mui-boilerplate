@@ -4,7 +4,7 @@
   height: 100%; // mobile viewport workaround
   width: 100%; // mobile viewport workaround
   overflow: hidden;
-  @include flex-vertical-align;
+  @include flex-center;
   color: $primary-color;
   background: $theme-color;
 }

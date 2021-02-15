@@ -9,7 +9,7 @@ import Document, {
 } from 'next/document';
 import { ServerStyleSheets } from '@material-ui/core/styles';
 
-const HOST = process.env.NEXT_PUBLIC_HOST;
+const HOST = process.env.NEXT_PUBLIC_HOST || '';
 
 export default class MyDocument extends Document {
   render() {

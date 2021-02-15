@@ -9,7 +9,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import { BiThreeDotsVertical } from 'components/svgs';
-import s from './menuButton.module.scss';
+import s from './navigation.module.scss';
 
 function MenuButton({ applyAnchor }) {
   const [state, setState] = useState({

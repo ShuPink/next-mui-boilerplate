@@ -16,7 +16,7 @@ import { StylesProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 // import useUnregisterSW from "lib/unregisterSW";
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import up from 'components/up.module.scss';
+import up from 'components/transitions/up.module.scss';
 
 import 'styles/globals.scss';
 

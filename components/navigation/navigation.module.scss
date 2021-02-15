@@ -1,35 +1,54 @@
 @import "/styles/utils.scss";
 
+@mixin sans-serif-font-settings {
+    font-family: $sans-serif-font;
+    color: white;
+    letter-spacing: 1px;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+@mixin nav-button-settings {
+    @include sans-serif-font-settings;
+    transition: 300ms ease-out;
+    &:hover {
+        color: deeppink;
+        transform: scale(1.2);
+        transition: 200ms ease-in;
+    }
+    :global .MuiButton-label {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        @include breakpoints-down(sm) {
+          background:rgba(200, 200, 200, 0.2);
+          color: palevioletred;
+          padding: 0.6rem 0.6rem;
+          border-radius: 0.5rem;
+          margin-right: 0.5rem;
+        }
+    };
+}
+
 .nav {
-  @include flex-vertical-align;
-  @include sans-serif-font-settings;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  transition: background-color 1000ms ease;
+  @include flex-center;
   justify-content: space-evenly;
   height: 4rem;
   width: 100%;
-  background: rgba(0,0,0,0.2);
+  background: rgba(0,0,0,0.4);
+  :global .MuiButton-label {
+    color: pink;
+  };
   @include breakpoints-down(sm) {
-    @media (orientation: landscape) {
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-  }
-  @include breakpoints-down(xs) {
-    height: 6rem;
-    width: 100%;
-    justify-content: start;
-    padding-bottom: 0;
+    background: none;
   }
 }
 
-.hideWhenSmall {
+// hamburger menu with drawer
+.menuButton {
   @include nav-button-settings;
-  @include breakpoints-down(sm) {
-    @media (orientation: landscape) {
-      display: none;
-    }
-  }
-  @include breakpoints-down(xs) {
-    display: none;
-  }
+  margin-left: auto;
 }

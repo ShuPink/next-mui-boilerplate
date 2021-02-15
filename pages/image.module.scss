@@ -1,8 +1,9 @@
 @import "/styles/utils.scss";
 
 .container {
-  @include flex-vertical-align;
+  @include flex-center;
   flex-direction: column;
+  height: 100vh;
 }
 
 .main {
@@ -14,8 +15,13 @@
 }
 
 .imageContainer {
-  @include flex-vertical-align;
+  @include flex-center;
   height: 100%;
   width: 100%;
-  border: 1px solid red;
+  border: 3px solid red;
+}
+
+.imageWrapper {
+  border-radius: 50%;
+  overflow: hidden;
 }

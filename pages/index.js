@@ -1,12 +1,11 @@
 import Navigation from 'components/navigation';
 import Head from 'next/head';
 import Link from 'next/link';
-import clsx from 'clsx';
 import s from './index.module.scss';
 
 export default function Home() {
   return (
-    <div className={clsx(s.container, 'container')}>
+    <div className={s.container}>
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />

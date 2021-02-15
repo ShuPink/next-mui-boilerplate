@@ -1,9 +1,6 @@
 import Navigation from 'components/navigation';
 import Head from 'next/head';
-import clsx from 'clsx';
-import ResponsiveImage from 'components/image';
-import { useContainerDimensions } from 'lib/containerDimensions';
-import { useRef } from 'react';
+import ImageScaled from 'components/images/imageScaled';
 import s from './image.module.scss';
 
 export default function Home() {
@@ -14,25 +11,8 @@ export default function Home() {
     height: 2296,
   };
 
-  const ref = useRef();
-  const { frameDims, windowIsPortrait } = useContainerDimensions(ref);
-  const { height, width } = frameDims;
-
-  let finalHeight;
-  let finalWidth;
-  let aspectRatio;
-  if (windowIsPortrait) {
-    aspectRatio = width / myImage.width;
-    finalHeight = myImage.height * aspectRatio;
-    finalWidth = width;
-  } else {
-    aspectRatio = height / myImage.height;
-    finalHeight = height;
-    finalWidth = myImage.width * aspectRatio;
-  }
-
   return (
-    <div className={clsx(s.container, 'container')}>
+    <div className={s.container}>
       <Head>
         <title>Image</title>
         <link rel="icon" href="/favicon.ico" />
@@ -40,15 +20,11 @@ export default function Home() {
       </Head>
       <Navigation />
       <main className={s.main}>
-        <div className={s.imageContainer} ref={ref}>
-          <ResponsiveImage
-            alt={myImage.alt}
-            height={finalHeight}
-            width={finalWidth}
-            src={myImage.src}
-            loading="lazy"
-          />
-        </div>
+        <ImageScaled
+          image={myImage}
+          containerClass={s.imageContainer}
+          wrapperClass={s.imageWrapper}
+        />
       </main>
     </div>
   );

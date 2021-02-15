@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
 const svgPropTypes = {
   className: PropTypes.string,
@@ -18,16 +18,16 @@ const pretty = (name) => {
   return prettyClass;
 };
 
-/* ---- Bootstrap Icons ---- 
+/* ---- Bootstrap Icons ----
   https://icons.getbootstrap.com */
 
 // bootstrap icons default props
 const bsDefaultProps = {
-  className: "",
-  width: "1.5em",
-  height: "1.5em",
-  viewBox: "0 0 16 16",
-  fill: "currentColor",
+  className: '',
+  width: '1.5em',
+  height: '1.5em',
+  viewBox: '0 0 16 16',
+  fill: 'currentColor',
 };
 
 /** bi-three-dots-vertical */
@@ -59,7 +59,9 @@ BiThreeDotsVertical.defaultProps = bsDefaultProps;
 
 /** bi-house */
 
-export const BiHouse = ({ className, width, height, viewBox, fill }) => (
+export const BiHouse = ({
+  className, width, height, viewBox, fill,
+}) => (
   <svg
     width={width}
     height={height}
@@ -82,7 +84,7 @@ export const BiHouse = ({ className, width, height, viewBox, fill }) => (
 BiHouse.propTypes = svgPropTypes;
 BiHouse.defaultProps = bsDefaultProps;
 
-/* ---- Loaders ---- 
+/* ---- Loaders ----
   https://github.com/ajwann/svg-loaders-react
   https://github.com/SamHerbert/SVG-Loaders */
 
@@ -99,7 +101,7 @@ export const RingLoader = ({
     height={height}
     stroke={stroke}
     viewBox={viewBox}
-    className={`svg-loaders-svg${className ? ` ${className}` : ""}`}
+    className={`svg-loaders-svg${className ? ` ${className}` : ''}`}
   >
     <g
       fill={fill}
@@ -183,21 +185,23 @@ RingLoader.propTypes = {
 };
 
 RingLoader.defaultProps = {
-  className: "",
-  width: "1.5em",
-  height: "1.5em",
-  viewBox: "0 0 45 45",
-  fill: "none",
-  stroke: "currentColor",
+  className: '',
+  width: '1.5em',
+  height: '1.5em',
+  viewBox: '0 0 45 45',
+  fill: 'none',
+  stroke: 'currentColor',
 };
 
-export const ThreeDots = ({ className, width, height, viewBox, fill }) => (
+export const ThreeDots = ({
+  className, width, height, viewBox, fill,
+}) => (
   <svg
     width={width}
     height={height}
     fill={fill}
     viewBox={viewBox}
-    className={`svg-loaders-svg${className ? ` ${className}` : ""}`}
+    className={`svg-loaders-svg${className ? ` ${className}` : ''}`}
   >
     <circle cx={15} cy={15} r={15}>
       <animate
@@ -277,9 +281,9 @@ ThreeDots.propTypes = {
 };
 
 ThreeDots.defaultProps = {
-  className: "",
-  width: "4em",
-  height: "1em",
-  viewBox: "0 0 120 30",
-  fill: "fff",
+  className: '',
+  width: '4em',
+  height: '1em',
+  viewBox: '0 0 120 30',
+  fill: 'fff',
 };
